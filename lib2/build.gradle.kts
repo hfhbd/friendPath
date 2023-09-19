@@ -1,12 +1,7 @@
 plugins {
-    kotlin("jvm")
-    id("friendPath")
+    id("kotlinSetup")
 }
 
 dependencies {
     testImplementation(kotlin("test"))
-}
-
-kotlin {
-    jvmToolchain(8)
 }
