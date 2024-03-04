@@ -1,5 +1,6 @@
 plugins {
     id("kotlinSetup")
+    id("friendPath")
 }
 
 dependencies {
