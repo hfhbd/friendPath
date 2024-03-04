@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.*
+
 plugins {
     kotlin("jvm")
 }
@@ -14,13 +16,6 @@ val friendPathJars = configurations.resolvable("friendPathJars") {
     )
 }
 
-val friendPathArgs: Provider<List<String>> = friendPathJars.flatMap {
-    it.elements.map { elements: Set<FileSystemLocation> ->
-        elements.map {
-            val path = it.asFile.absolutePath
-            "-Xfriend-paths=$path"
-        }
-    }
+tasks.withType(KotlinJvmCompile::class).configureEach {
+    friendPaths.from(friendPathJars)
 }
-
-kotlin.compilerOptions.freeCompilerArgs.addAll(friendPathArgs)
