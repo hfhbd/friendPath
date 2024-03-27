@@ -1,9 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.*
 
-plugins {
-    kotlin("jvm")
-}
-
 val friendPath = configurations.dependencyScope("friendPath") {
     isTransitive = false
 }
@@ -16,6 +12,6 @@ val friendPathJars = configurations.resolvable("friendPathJars") {
     )
 }
 
-tasks.withType(KotlinJvmCompile::class).configureEach {
+tasks.withType(KotlinCompile::class).configureEach {
     friendPaths.from(friendPathJars)
 }
