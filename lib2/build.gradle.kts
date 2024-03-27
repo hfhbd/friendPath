@@ -1,7 +1,10 @@
 plugins {
-    id("kotlinSetup")
+    kotlin("multiplatform")
 }
 
-dependencies {
-    testImplementation(kotlin("test"))
+kotlin {
+    jvmToolchain(8)
+
+    jvm()
+    linuxX64()
 }

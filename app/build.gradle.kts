@@ -1,7 +1,11 @@
 plugins {
-    id("kotlinSetup")
+    kotlin("jvm")
     id("com.google.devtools.ksp")
     id("friendPath")
+}
+
+kotlin {
+    jvmToolchain(8)
 }
 
 dependencies {
@@ -12,6 +16,4 @@ dependencies {
     friendPath(projects.lib2)
 
     ksp("app.softwork.serviceloader:ksp-plugin:0.0.8")
-
-    testImplementation(kotlin("test"))
 }
