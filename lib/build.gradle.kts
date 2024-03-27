@@ -1,7 +1,7 @@
 plugins {
-    id("kotlinSetup")
+    kotlin("jvm")
 }
 
-dependencies {
-    testImplementation(kotlin("test"))
+kotlin {
+    jvmToolchain(8)
 }

@@ -30,4 +30,6 @@ enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 include(":lib")
 include(":lib2")
+
 include(":app")
+include(":mpp")
