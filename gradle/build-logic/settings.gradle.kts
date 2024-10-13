@@ -6,8 +6,8 @@ dependencyResolutionManagement {
     }
 
     versionCatalogs.register("libs") {
-        from(files("../gradle/libs.versions.toml"))
+        from(files("../libs.versions.toml"))
     }
 }
 
-rootProject.name = "buildSrc"
+rootProject.name = "build-logic"

@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("gradle/build-logic")
     repositories {
         mavenCentral()
         gradlePluginPortal()
@@ -6,6 +7,7 @@ pluginManagement {
 }
 
 plugins {
+    id("MyRepos")
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
     id("com.gradle.develocity") version "3.18.1"
 }
@@ -19,13 +21,6 @@ develocity {
             onlyIf { isCI }
         }
         tag("CI")
-    }
-}
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        mavenCentral()
     }
 }
 
