@@ -18,11 +18,11 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 21
-      - name: Cache buildSrc
+      - name: Cache gradle/build-logic
         uses: actions/cache@v4
         with:
-          path: buildSrc/build
-          key: build-logic-${{ hashFiles('buildSrc/src/**', 'buildSrc/build.gradle.kts','buildSrc/settings.gradle.kts', 'gradle/libs.versions.toml') }}
+          path: gradle/build-logic/build
+          key: build-logic-${{ hashFiles('gradle/build-logic/src/**', 'gradle/build-logic/build.gradle.kts','gradle/build-logic/settings.gradle.kts', 'gradle/libs.versions.toml') }}
       - uses: gradle/actions/setup-gradle@v4
         with:
           cache-encryption-key: ${{ secrets.GRADLE_CC_KEY }}
