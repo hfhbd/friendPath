@@ -20,6 +20,8 @@ jobs:
           distribution: 'temurin'
           java-version: 21
       - uses: gradle/actions/dependency-submission@v4
+        with:
+          cache-encryption-key: ${{ secrets.GRADLE_CC_KEY }}
 
   dependency-review:
     runs-on: ubuntu-latest
