@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm")
-    id("com.google.devtools.ksp")
+    id("app.softwork.serviceloader-compiler")
     id("friendPath")
 }
 
@@ -14,6 +14,4 @@ dependencies {
 
     implementation(projects.lib2)
     friendPath(projects.lib2)
-
-    ksp("app.softwork.serviceloader:ksp-plugin:0.0.9")
 }
