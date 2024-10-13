@@ -19,4 +19,6 @@ jobs:
           distribution: 'temurin'
           java-version: 21
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-encryption-key: ${{ secrets.GRADLE_CC_KEY }}
       - run: ./gradlew build
